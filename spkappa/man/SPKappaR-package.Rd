@@ -7,8 +7,8 @@
 \tabular{ll}{Package: \tab SPKappaR\cr
 Type: \tab Package\cr
 Title: \tab R companion to SPKappa\cr
-Version: \tab 0.1.0-0\cr
-Date: \tab 2012-12-01\cr
+Version: \tab 0.0.0-1\cr
+Date: \tab 2012-12-03\cr
 Author: \tab Anatoly Sorokin, Oksana Sorokina\cr
 Maintainer: \tab Anatoly Sorokin <lptolik@gmail.com>\cr
 License: \tab GPL (>= 2)\cr
