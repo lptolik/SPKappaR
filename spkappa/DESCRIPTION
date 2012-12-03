@@ -1,8 +1,8 @@
 Package: SPKappaR
 Type: Package
 Title: R companion to SPKappa
-Version: 0.1.0-0
-Date: 2012-12-01
+Version: 0.0.0-1
+Date: 2012-12-03
 Author: Anatoly Sorokin, Oksana Sorokina
 Maintainer: Anatoly Sorokin <lptolik@gmail.com>
 Description: Parse output of SPKappa, process and visualize results
