@@ -102,13 +102,10 @@ readState<-function(
     if(!require(RColorBrewer)){
       stop('Function is required package "RColorBrewer"');
     }
-    if(!require(rkappa)){
-      stop('Function is required package "rkappa"');
-    }
     ankoreg<-paste('^.*',anchor,'\\[([0-9]+)\\]\\[([0-9]+)\\]\\[([0-9]+)\\].*$',sep='')
     l<-readLines(file)
     l1<-gsub('%init: +[0-9]+ +','',gsub('\\[[0-9]+\\]','',gsub(':domainLink','',l)))
-     bl1<-sapply(l1,makeBruttoStr)
+     bl1<-sapply(l1,rkappa::makeBruttoStr)
      ubl1<-unique(bl1)
      colors<-colorRampPalette(brewer.pal(8,"Dark2"))(length(ubl1))
      if(any(is.na(colorDef))){
@@ -121,7 +118,7 @@ readState<-function(
        ind<-which(m>=0)
        l3<-l2[ind]
        s<-substr(l3,m,attr(m,"match.length")+m)
-       bl3<-sapply(gsub('%init: +[0-9]+ +','',gsub('\\[[0-9]+\\]','',gsub(':domainLink','',l3))),makeBruttoStr)
+       bl3<-sapply(gsub('%init: +[0-9]+ +','',gsub('\\[[0-9]+\\]','',gsub(':domainLink','',l3))),rkappa::makeBruttoStr)
        cl3<-colorDef$color[sapply(bl3,pmatch,colorDef$kappa)]
        if(any(is.na(cl3))){
        	warning(bl3[is.na(cl3)])
