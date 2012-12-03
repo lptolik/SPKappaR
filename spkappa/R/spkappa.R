@@ -22,14 +22,15 @@ updateStruct<-function(
 ### data.frame with columns X,Y,Z,Col,Alph that contains coordinates (X,Y,Z) color (Col) and transparancy value (Alph) for voxels
 }
 showStruct<-function(
-### Calculates and shows 3D structure of domain defined by logical function
+### Modifyes and shows 3D structure of domain defined by logical function
 struct=spine,##<< basic structure of the domain that have to be modified.
 color='black',##<< color of spheres, matched by the function
 alpha=1,##<< transparency of spheres, matched by the function
-def=function(.x,...){.x$X>20&.x$Col=='green'},##<<logical function that defines coordinates of the voxels to be modified
+def,##<<logical function that defines coordinates of the voxels to be modified
 show=FALSE,##<< logical flag, if show=TRUE new domain will be visualised by the 'rgl' library
 ...##<< additional parameters required by the logical function
 ){
+##note<< Logica def function could loop like def=function(.x,...){return(.x$X>20&.x$Col=='green')}
   res<-struct;
   ind<-which(def(res,...))
   res[ind,c('Col','Alph')]<-list(Col=color,Alp=alpha)
